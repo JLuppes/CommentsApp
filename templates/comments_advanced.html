@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% block title %}{{super()}} - Safe{% endblock %}
 {% block content %}
     <h2>All Comments (Safe HTML Allowed)</h2>
     <form method="POST" action="{{ url_for('add_comment_advanced') }}">

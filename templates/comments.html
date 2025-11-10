@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Comments - Comment System{% endblock %}
+{% block title %}{{super()}} - Unsafe{% endblock %}
 
 {% block content %}
     <h2>All Comments</h2>
@@ -16,8 +16,7 @@
     {% for comment in comments %}
         <div style="border: 1px solid #ccc; margin: 10px; padding: 10px;">
             <!-- UNSAFE: Directly output user content without sanitization -->
-            <!-- <p>{{ comment | safe }}</p> -->
-             <p>{{ comment }}</p> 
+             <p>{{ comment | safe }}</p> 
             <small>Comment #{{ loop.index }}</small>
         </div>
     {% else %}
